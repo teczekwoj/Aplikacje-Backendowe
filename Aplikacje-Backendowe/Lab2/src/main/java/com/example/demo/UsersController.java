@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.PostConstruct;
@@ -40,6 +41,27 @@ public class UsersController {
 
     ) {
         return users;
+    }
+
+    //Remove user by ID
+    @RequestMapping("/users/{id}/remove")
+    @ResponseBody
+
+    public Object RemoveUserById(
+            @PathVariable Long id
+    ) {
+        return users.remove(id);
+    }
+
+    //Add users
+    @RequestMapping("/users/add")
+    @ResponseBody
+    public Object AddUser(
+            @RequestParam Long id,
+            @RequestParam String name
+    ) {
+        users.put(id, new UserEntity(id, name));
+        return "added user: " + name;
     }
 }
 
