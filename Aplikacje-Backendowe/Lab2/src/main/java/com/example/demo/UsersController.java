@@ -15,6 +15,7 @@ public class UsersController {
 
     private final Map<Long, UserEntity> users = new HashMap<>();
 
+    //Create default users map
     @PostConstruct
     private final void Create() {
 
@@ -53,7 +54,7 @@ public class UsersController {
         return users.remove(id);
     }
 
-    //Add users
+    //Add user
     @RequestMapping("/users/add")
     @ResponseBody
     public Object AddUser(
