@@ -55,7 +55,7 @@ public class UsersController {
     }
 
     //Add user
-    @RequestMapping("/users/add")
+    @RequestMapping("/users/add") //user/add?name=John&age=23
     @ResponseBody
     public Object AddUser(
             @RequestParam Long id,

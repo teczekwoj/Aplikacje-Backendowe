@@ -1,12 +1,7 @@
-import java.io.FileOutputStream;
+
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.nio.charset.StandardCharsets;
 
-
-//Przepisz program na Java https://dirask.com/posts/JavaScript-binary-search-algorithm-example-gp5lgD
-
-public class zad3 {
+public class zad2 {
 
     public static void main(String[] args) throws IOException {
 
@@ -35,4 +30,3 @@ public class zad3 {
         return splitArray(array, value, 0, array.length - 1);
     }
 }
-
